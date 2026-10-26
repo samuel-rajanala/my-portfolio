@@ -37,7 +37,7 @@ export const referenceAssets = {
 
 export const profile = {
   name: 'Samuel Rajanala',
-  shortName: 'Sam',
+  shortName: 'Samuel',
   email: 'samuelrajanala@gmail.com',
   github: 'https://github.com/samuel-rajanala',
   linkedin: 'https://www.linkedin.com/in/samuelrajanala'
