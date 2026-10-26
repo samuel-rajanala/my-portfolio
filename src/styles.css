@@ -43,3 +43,9 @@ html,body,#root,.site-shell,.hero,.experience,.projects{background-color:#111522
 .project-art{background:radial-gradient(ellipse at 50% 40%,#536684 0%,#303d59 42%,#111522 80%)}
 .art-terminal{background:radial-gradient(ellipse at 50% 45%,#536684 0%,#303d59 42%,#111522 78%)}
 .art-matrix{background:radial-gradient(ellipse at 50% 45%,#98a9c4 0%,#303d59 42%,#111522 78%)}
+
+
+/* Full-name hero lockup: keep Samuel's name readable across screen sizes. */
+.hero-title{font-size:clamp(44px,8.5vw,124px)}
+@media(max-width:900px){.hero-title{font-size:clamp(42px,9.5vw,100px)}}
+@media(max-width:640px){.hero-title{font-size:clamp(36px,10.5vw,64px);letter-spacing:-.075em}}
