@@ -131,42 +131,7 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
   const Icon = project.icon;
   return <div className="project-track"><article className={`project-card project-${index}`} style={{ top: `${24 + index * 28}px` }}>
     <div className="project-head"><span className="project-number">{project.n}</span><span className="project-category">{project.category}</span><a className="project-link" href={project.link} target="_blank" rel="noreferrer">VIEW PROJECT <ArrowUpRight size={15}/></a></div>
-    <div className="project-body"><div className={`project-art art-${project.visual}`}><div className="art-grid"/><div className="art-ring ring-one"/><div className="art-ring ring-two"/><div className="art-center"><Icon size={54} strokeWidth={1.2}/></div><span className="art-code">{project.visual === 'terminal' ? 'root@samuel:~ : project.visual === 'matrix' ? 'AUTHORIZATION // HUMAN REVIEW' : 'OPEN_CORE_SECURITY'}</span><span className="art-coord">0x{index + 11}F · SECURE</span></div><div className="project-info"><h3>{project.title}</h3><p>{project.desc}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="text-link" href={project.link} target="_blank" rel="noreferrer">EXPLORE REPOSITORY <ArrowUpRight size={16}/></a></div></div>
-  </article></div>;
-}
-
-function Projects() {
-  const stackRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const stack = stackRef.current;
-    if (!stack) return;
-    const tracks = Array.from(stack.querySelectorAll<HTMLElement>('.project-track'));
-    const cards = Array.from(stack.querySelectorAll<HTMLElement>('.project-card'));
-    let frame = 0;
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => tracks.forEach((track, index) => {
-        const rect = track.getBoundingClientRect();
-        const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
-        const shrink = (projects.length - 1 - index) * .03;
-        cards[index]?.style.setProperty('transform', `scale(${1 - shrink * progress})`);
-      }));
-    };
-    update(); window.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update);
-    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', update); window.removeEventListener('resize', update); };
-  }, []);
-  return <section className="projects section-pad" id="projects"><div className="section-kicker"><span>04 / SELECTED BUILDS</span><span>THOUGHT → CODE → IMPACT</span></div><h2 className="section-heading gradient-text">SELECTED<br/>PROJECTS<span>.</span></h2><p className="projects-intro">A few things I’ve been building, exploring and learning from. Each project is a work in progress — just like the person behind it.</p><div className="project-stack" ref={stackRef}>{projects.map((project, i) => <ProjectCard key={project.n} project={project} index={i}/>)}</div></section>;
-}
-
-function Contact() {
-  return <footer className="contact section-pad" id="contact"><div className="section-kicker"><span>05 / YOUR TURN</span><span>OPEN TO OPPORTUNITIES & COLLABORATION</span></div><h2>LET’S MAKE<br/><span>SECURITY</span><br/>MATTER<span className="period">.</span></h2><div className="contact-bottom"><div><p>Have an interesting problem, a project, or an opportunity to talk about?</p><ContactButton>SAY HELLO</ContactButton></div><div className="socials"><a href={profile.github} target="_blank" rel="noreferrer"><Github/> GITHUB <ArrowUpRight size={14}/></a><a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin/> LINKEDIN <ArrowUpRight size={14}/></a><a href={`mailto:${profile.email}`}><Mail/> EMAIL <ArrowUpRight size={14}/></a></div></div><div className="footer-line"><span>© 2026 SAMUEL RAJANALA</span><a href="#top">BACK TO TOP ↑</a><span>BUILT WITH CURIOSITY.</span></div></footer>;
-}
-
-export default function Portfolio() {
-  useLenis();
-  return <main className="site-shell"><Hero/><SignalBand/><About/><Experience/><Services/><Projects/><Contact/></main>;
-}
- : project.visual === 'matrix' ? 'AUTHORIZATION // HUMAN REVIEW' : 'OPEN_CORE_SECURITY'}</span><span className="art-coord">0x{index + 11}F · SECURE</span></div><div className="project-info"><h3>{project.title}</h3><p>{project.desc}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="text-link" href={project.link} target="_blank" rel="noreferrer">EXPLORE REPOSITORY <ArrowUpRight size={16}/></a></div></div>
+    <div className="project-body"><div className={`project-art art-${project.visual}`}><div className="art-grid"/><div className="art-ring ring-one"/><div className="art-ring ring-two"/><div className="art-center"><Icon size={54} strokeWidth={1.2}/></div><span className="art-code">{project.visual === 'terminal' ? 'root@samuel:~$' : project.visual === 'matrix' ? 'AUTHORIZATION // HUMAN REVIEW' : 'OPEN_CORE_SECURITY'}</span><span className="art-coord">0x{index + 11}F · SECURE</span></div><div className="project-info"><h3>{project.title}</h3><p>{project.desc}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="text-link" href={project.link} target="_blank" rel="noreferrer">EXPLORE REPOSITORY <ArrowUpRight size={16}/></a></div></div>
   </article></div>;
 }
 
