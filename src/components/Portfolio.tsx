@@ -14,7 +14,7 @@ const services = [
 const projects = [
   { n: '01', category: 'OPEN-SOURCE PLATFORM', title: 'Open Core Security', desc: 'A community-focused security learning platform with challenges, submissions and protected solution access.', tags: ['React', 'Supabase', 'Edge Functions'], link: 'https://github.com/samuel-rajanala/open-core-security', icon: Shield, visual: 'globe' },
   { n: '02', category: 'SECURITY WORKFLOW', title: 'P³ Prototype', desc: 'A prototype exploring a more structured security workflow. Built and reviewed with attention to functionality, usability and secure implementation.', tags: ['Python', 'React', 'Security'], link: 'https://github.com/BlueOps-Community/p3-prototype', icon: Network, visual: 'terminal' },
-  { n: '03', category: 'RESEARCH TOOLING', title: 'Bug Bounty Research Agent', desc: 'A passive-first research assistant with fail-closed authorization gates and human approval before any testing. Production testing remains disabled.', tags: ['Python', 'Authorization', 'Automation'], link: 'https://github.com/samuel-rajanala', icon: Bug, visual: 'matrix' }
+  { n: '03', category: 'RESEARCH TOOLING', title: 'Bug Bounty Research Agent', desc: 'A passive-first research assistant with fail-closed authorization gates and human approval before any testing. Production testing remains disabled.', tags: ['Python', 'Authorization', 'Automation'], link: 'https://github.com/samuel-rajanala/mercadolibre-bugbounty-agent', icon: Bug, visual: 'matrix' }
 ];
 
 function ContactButton({ children = 'LET’S CONNECT' }: { children?: string }) {
